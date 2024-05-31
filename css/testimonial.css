@@ -5,7 +5,7 @@
     h2 {
       font-size: 30px;
       text-align: center;
-      color: #333333;
+      color: #f9f8f5;
       margin-bottom: 50px;
     }
   
@@ -35,7 +35,7 @@
         box-shadow: none;
   
         span {
-          background: #01b0f8;
+          background: #e7bb2a;
           box-shadow: none;
           height: 12px;
           width: 12px;
@@ -46,7 +46,7 @@
   
     .card {
       background: #fff;
-      box-shadow: 0 8px 30px -7px #c9dff0;
+      box-shadow: 0 8px 30px -7px #e7bb2a;
       margin: 0 20px;
       padding: 0 10px;
       border-radius: 20px;
@@ -62,7 +62,7 @@
       }
   
       h5 {
-        color: #01b0f8;
+        color: #e7bb2a;
         font-size: 21px;
         line-height: 1.3;
   
