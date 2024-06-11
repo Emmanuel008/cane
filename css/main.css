@@ -3188,7 +3188,7 @@ html.no-csstransitions .home-content__main {
 .s-clients {
     padding-top: 16.2rem;
     padding-bottom: 16.8rem;
-    background-color: #1f1d11;
+    background-color: #ffffff;
     color: #757575;
     position: relative;
 }
@@ -3203,6 +3203,11 @@ html.no-csstransitions .home-content__main {
     text-align: center;
     vertical-align: middle;
     position: relative;
+}
+
+.clients {
+    text-align: center;
+    justify-content: center;
 }
 
 .clients__slide {

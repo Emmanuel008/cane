@@ -6,7 +6,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<?php  ?>
 <head>
 
     <!--- basic page needs -->
@@ -20,6 +20,9 @@
     <meta http-equiv="refresh" content="3600">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/vendor.css"/>
     <link rel="stylesheet" href="css/main.css"/>
@@ -50,30 +53,21 @@
 <body id="top">
 
 <!-- header -->
-<header class="s-header">
+<header class="s-header ">
     <div class="nav-menu">
         <div class="nav-menu-content">
             <div class="logo">
                 <a class="logo-link" href="/">
-                    <img alt="Homepage" src="images/logo.jpeg">
+                    <img alt="Homepage" src="images/logo.jpeg" >
                 </a>
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
                     <li class="dropdown"><a class="" href="home.html" title="about">Home</a>
-                    <li class="dropdown">
-                        <a class="dropbtn" href="javascript:void(0)">
-                            Our Ventures <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-content">
-                            <a class="" href="sahara-sparks">#</a>
-                            <a class="" href="https://consult.saharaventures.com">#</a>
-                            <a class="" href="sahara-accelerator">#</a>
-                        </div>
-                    </li>
-                    <li class="dropdown"><a href="community.html">Community</a></li>
+                   
+                    <li class="dropdown"><a href="community.php">Community</a></li>
                     <!-- <li class="dropdown"><a class="" href="/clients" title="clients">Community</li> -->
-                    <li class="dropdown"><a href="blog.html" >Programs</a></li>
+                    <li class="dropdown"><a href="blog.php" >Programs</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -98,83 +92,19 @@
 
             <h3>Welcome </h3>
             <h1>
-                <br>Buni Hub Community</br>
-                Looking for a comfortable working space?.
+                <br>Buni Hub Programs</br>
+              Different program conducted at Bunihub
             </h1>
         </div>
 
-        <div class="home-content__scroll">
-            <a class="scroll-link smoothscroll" href="#about">
-                <span>Scroll Down</span>
-            </a>
-        </div>
-
-        <div class="home-content__line"></div>
 
     </div> <!-- end home-content -->
 
-    <ul class="home-social">
-        <li>
-            <a href="https://www.facebook.com/SparkSahara/" target="blank">
-                <i aria-hidden="true" class="fa fa-facebook"></i><span>Facebook</span></a>
-        </li>
-        <li>
-            <a href="https://twitter.com/SparkSahara" target="blank">
-                <i aria-hidden="true" class="fa fa-twitter"></i><span>Twitter</span></a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/sparksahara/" target="blank">
-                <i aria-hidden="true" class="fa fa-instagram"></i><span>Instagram</span></a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/channel/UCzf-5Eb1MSk3BTKJRA2pEMA" target="blank">
-                <i aria-hidden="true" class="fa fa-youtube"></i><span>Youtube</span></a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/company/saharasparks/" target="blank">
-                <i aria-hidden="true" class="fa fa-linkedin"></i><span>LinkedIn</span></a>
-        </li>
-    </ul>
+    
     <!-- end home-social -->
 
 </section> <!-- end s-home -->
 
-<!-- about ================================================== -->
-<section class="s-about" id='about'>
-
-    <div class="row section-header has-bottom-sep">
-        <div class="col-full">
-            <h3 class="subhead subhead--dark">About </h3>
-            <h1 class="display-1 display-1--light">BuniHub Community</h1>
-        </div>
-    </div> <!-- end section-header -->
-
-    <div class="row about-desc" >
-        <div class="col-full">
-            <p>
-                Buni Hub, a leading innovation and tech hub in Tanzania, organizes East Africa's largest Innovation and Technology Entrepreneurship event. This event promotes discussions on global technology trends and supports early-stage companies by providing a platform to pitch and exhibit their businesses to investors and partners. Through this event, Buni Hub fosters technological advancement and entrepreneurial growth in East and Central Africa.
-            </p>
-        </div>
-    </div> <!-- end about-desc -->
-
-    <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" >
-
-        <div class="col-block stats__col ">
-            <div class="stats__count">100+</div>
-            <h5>Events Organized</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__count">2400+</div>
-            <h5>Events Attendees</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__count">239+</div>
-            <h5>Startups Reached</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__count">42+</div>
-            <h5>Event Partners</h5>
-        </div>
 
     </div> <!-- end about-stats -->
 
@@ -187,42 +117,75 @@
 
     <div class="row section-header has-bottom-sep">
         <div class="col-full">
-            <h3 class="subhead">What We Do</h3>
-            <h1 class="display-2">BuniHub Community</h1>
+            <h3 class="subhead">PROGRAMS</h3>
+            <h1 class="display-2">BuniHub Programs</h1>
         </div>
     </div> <!-- end section-header -->
 
     <div class="row services-list block-1-2 block-tab-full">
+    <?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$db = "upload";
+$port = 3306;
 
-        <div class="col-block service-item" >
-            <div class="service-text">
-                <h3 class="h2">Co- working space </h3>
-                <p><i>Buni Hub, a leading innovation and tech hub in Tanzania, provides space for innovators and entrepreneurs to work and innovate, promoting discussions on global technology trends and supporting early-stage companies.</i></p>
-            </div>
-        </div>
+ // Create database connection
+ $conn = new mysqli($host, $username, $password, $db, $port);
 
-        <div class="col-block service-item" >
-            <div class="service-text">
-                <h3 class="h2">Hub of Hubs</h3>
-                <p><i>BuniHub manages corporate events. bunihub help on designing, planning, and management of corporate events. BuniHub organizes small events (forums, meetups, retreats and workshops) and large events (conferences and exhibitions).</i></p>
-            </div>
-        </div>
+ // Check connection
+ if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+ }
 
-        <div class="col-block service-item">
-            <div class="service-text">
-                <h3 class="h2">Community Meetup Event</h3>
-                <p><i>Sahara Sparks manages corporate events digital and traditional media presence. Sahara runs social media campaigns to promote events and engagement with remote audiences. Sahara helps in designing and management of events social and traditional media strategy.</i></p>
+ 
+ $sql = "SELECT * FROM `blog`";
+ $result = $conn->query($sql);
+ 
+ if ($result->num_rows > 0) { ?>
+    <div class="container" >
+    <div class="row ">
+        
+        <?php while ($row = $result->fetch_assoc()) { ?>
+            <div class="col-ld " style="margin-left:40px;">
+            <div class="card  " style="width: 30rem; margin-top:40px;">
+              <div class="card-body">
+              <img  src="./images/<?php echo $row['photo']; ?>" style="width: 280px; height: 200px; object-fit: cover;">
+              <h5 class="card-title"><?php echo $row['title']; ?></h5>
+            
+             <p class="card-text"><?php echo $row['content']; ?></p>
+             <a href="<?php echo $row['readmore']; ?>" class="card-link" style="color: #d8420d ">Read more</a>
+             
+  </div>
+</div>
+      
             </div>
+              
+        <?php } ?>`
         </div>
+        
+    </div>
+</div>
 
-        <div class="col-block service-item" >
-            <div class="service-text">
-                <h3 class="h2">Events Logistics</h3>
-                <p><i>Sahara Sparks helps in the management of event logistics. Sahara Sparks works with different vendors; caterers, photographers, videographers, transport and accommodation agencies etc and helps in the coordination and management of the vendors helping our clients focus on core issues of their events.</i></p>
-            </div>
-        </div>
-    </div> <!-- end services-list -->
-</section> <!-- end s-services -->
+ <?php
+ } else {
+     echo "NO ITEMS UPLOADED";
+ }
+ 
+  
+  // Close statement and connection
+ 
+?>
+        
+</div> <!-- end services-list -->
+</section> 
+<!-- end s-services -->
+
+
+
+
+
+
 
 <!-- footer -->
 <footer>
@@ -230,9 +193,9 @@
         <div class="col-three tab-full left footer-subscribe">
             <h4>Other Links</h4>
             <p>
-                <a href="home.html" target="">hello</a> <br>
-                <a href="community.html" target="">Community</a> <br>
-                <a href="blog.html" target="">Programs</a> <br>
+                <a href="home.html" target="">About</a> <br>
+                <a href="community.php" target="">Community</a> <br>
+                <a href="blog.php" target="">Programs</a> <br>
                 <a class="" href="contact.html">Contact</a>
             </p>
         </div>
