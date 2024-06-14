@@ -106,8 +106,9 @@
                     while ($row = $result->fetch_assoc()) {?>
         <div class="carousel-item <?php echo $activeClass;?>">
           <div class="card">
-            <div class="img-wrapper">
-            <img class="card-img-top" src="./images/<?php echo $row['photo'];?>" style="width: 200pxpx; height: 200px;"  alt="">
+            <div style="width: auto; height: 500px;">
+            <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
+
             </div>
             <div class="card-body">
             <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
@@ -129,24 +130,13 @@
         </div>
 
         <!-- Left and right controls -->
-         <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleControls"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleControls"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
     </div>
 </section>
 

@@ -22,9 +22,12 @@
     <link rel="stylesheet" href="/css/buni">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/vendor.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="index.css"/>
     
 
     <!-- favicons -->
@@ -99,56 +102,64 @@
         </div>
     </div> <!-- end section-header -->
 
-    <div class="row services-list block-1-2 block-tab-full">
-    <?php
-        $host = "localhost";
-        $username = "root";
-        $password = "";
-        $db = "upload";
-        $port = 3306;
+    
+    <div id="carouselExampleControls" class="carousel">
+        <div class="carousel-inner">
 
-        // Create database connection
-        $conn = new mysqli($host, $username, $password, $db, $port);
+            <?php
+                $host = "localhost";
+                $username = "root";
+                $password = "";
+                $db = "upload";
+                $port = 3306;
 
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+                // Create database connection
+                $conn = new mysqli($host, $username, $password, $db, $port);
+                if ($conn->connect_error) {
+                    die("Connection failed: ". $conn->connect_error);
+                }
 
-        $sql = "SELECT * FROM `blog` ORDER BY `id` DESC";
-        $result = $conn->query($sql);
+                $sql = "SELECT * FROM `blog` ORDER BY `id` DESC";
+                $result = $conn->query($sql);
+                $activeClass = 'active';
 
-        if ($result->num_rows > 0) { ?>
-            <div class="container">
-                <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="row">
-                                <?php while ($row = $result->fetch_assoc()) { ?>
-                                    <div class="col-ld" style="margin-left:40px;">
-                                        <div class="card" style="width: 30rem; margin-top:40px;">
-                                            <div class="card-body">
-                                                <img src="./images/<?php echo $row['photo']; ?>" style="width: 280px; height: 200px; object-fit: cover;">
-                                                <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                                                <p class="card-text"><?php echo $row['content']; ?></p>
-                                                <a href="<?php echo $row['readmore']; ?>" class="card-link" style="color: #d8420d">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {?>
+        <div class="carousel-item <?php echo $activeClass;?>">
+          <div class="card">
+            <div style="width: auto; height: 500px;">
+            <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
+
             </div>
-        <?php } else {
-            echo "NO ITEMS UPLOADED";
-        }
+            <div class="card-body">
+            <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
+            <p class="card-text">“ <?php echo $row['content'];?> ”</p>
+              <a  href="<?php echo $row['readmore'];?>" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+                    
+                        <?php
+                        $activeClass = '';
+                    }
+                } else {
+                    echo "NO ITEMS UPLOADED";
+                }
 
-        // Close connection
-        $conn->close();
-    ?>
-    </div> <!-- end services-list -->
+                $conn->close();
+           ?>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+    </div>
+     
 </section> 
 <!-- end s-services -->
 
@@ -219,9 +230,20 @@
     }
 </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/pace.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-</body>
+<script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script></body>
 </html>
