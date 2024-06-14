@@ -399,6 +399,7 @@ in Tanzania.</br>
         <div>
             
             <div class="card text-center">
+                <br>
                 <img class="card-img-top" style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
                 <div class="card-body">
                     <h5>Mgasa Lucas<br /><span> BuniHub Member </span></h5>
@@ -410,6 +411,7 @@ in Tanzania.</br>
         <div>
 
             <div class="card text-center">
+            <br>
                 <img class="card-img-top"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" alt="">
                 <div class="card-body">
                     <h5>Elias Malema<br /><span> BuniHub Member </span></h5>
@@ -421,6 +423,7 @@ in Tanzania.</br>
        
 
             <div class="card text-center">
+            <br>
                 <img class="card-img-top"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" alt="">
                 <div class="card-body">
                     <h5>Michael <br /><span> BuniHub Member </span></h5>
@@ -430,7 +433,8 @@ in Tanzania.</br>
         </div>
       
             <div class="card text-center">
-                <img class="card-img-top1"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
+            <br>
+                <img class="card-img-top"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
                 <div class="card-body">
                     <h5>Bernadetha Kweka<br /><span> BuniHub Member </span></h5>
                     <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
