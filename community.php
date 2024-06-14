@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/vendor.css"/>
     <link rel="stylesheet" href="css/main.css"/>
@@ -109,6 +111,7 @@
 
 </section> <!-- end s-about -->
 
+
 <!-- services ================================================== -->
 <section class="s-services" id='services'>
 
@@ -120,64 +123,54 @@
     </div> <!-- end section-header -->
 
     <div class="row services-list block-1-2 block-tab-full">
+    
+ 
+ <div class="owl-carousel owl-carousel1 owl-theme">
     <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$db = "upload";
-$port = 3306;
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "upload";
+    $port = 3306;
+    
+     // Create database connection
+     $conn = new mysqli($host, $username, $password, $db, $port);
+    
+     // Check connection
+     if ($conn->connect_error) {
+         die("Connection failed: " . $conn->connect_error);
+     }
+    
+     
+     $sql = "SELECT * FROM `program` ORDER BY `id` DESC";
+     $result = $conn->query($sql);
+    
 
- // Create database connection
- $conn = new mysqli($host, $username, $password, $db, $port);
-
- // Check connection
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- }
-
- 
- $sql = "SELECT * FROM `program`";
- $result = $conn->query($sql);
- 
- if ($result->num_rows > 0) { ?>
-    <div class="container" >
-    <div class="row ">
-        
-        <?php while ($row = $result->fetch_assoc()) { ?>
-            <div class="col-ld " style="margin-left:40px;">
-            <div class="card  " style="width: 30rem; margin-top:40px;">
-              <div class="card-body">
-              <img  src="./images/<?php echo $row['photo']; ?>" style="width: 280px; height: 200px; object-fit: cover;">
-              <h5 class="card-title"><?php echo $row['title']; ?></h5>
-            
-             <p class="card-text"><?php echo $row['description']; ?></p>
-             <a href="<?php echo $row['link']; ?>" class="card-link" style="color: #d8420d ">Read more</a>
-             
-  </div>
-</div>
-      
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) { ?>
+            <div>
+                <div class="card text-center">
+                    <img class="card-img-top" src="./images/<?php echo $row['photo']; ?>" height="50" width="50" alt="">
+                    <div class="card-body">
+                        <h5><?php echo $row['title']; ?><br /><span> Program Member </span></h5>
+                        <p class="card-text">“ <?php echo $row['description']; ?> ”</p>
+                        <a href="<?php echo $row['link']; ?>" class="card-link" style="color: #d8420d">Read more</a>
+                    </div>
+                </div>
             </div>
-              
-        <?php } ?>`
-        </div>
-        
-    </div>
+        <?php }
+    } else {
+        echo "NO ITEMS UPLOADED";
+    }
+
+    // Close statement and connection
+    ?>
 </div>
 
- <?php
- } else {
-     echo "NO ITEMS UPLOADED";
- }
- 
-  
-  // Close statement and connection
- 
-?>
         
 </div> <!-- end services-list -->
 </section> 
 <!-- end s-services -->
-
 
 
 <!-- footer -->
@@ -248,6 +241,43 @@ $port = 3306;
         script.src = '/js/lazysizes.min.js';
         document.body.appendChild(script);
     }
+</script>
+<!-- jQuery and Owl Carousel JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+(function () {
+    "use strict";
+
+    var carousels = function () {
+        $(".owl-carousel1").owlCarousel({
+            loop: true,
+            center: true,
+            margin: 0,
+            responsiveClass: true,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                680: {
+                    items: 2,
+                    nav: false,
+                    loop: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true
+                }
+            }
+        });
+    };
+
+    (function ($) {
+        carousels();
+    })(jQuery);
+})();
 </script>
 
 </body>

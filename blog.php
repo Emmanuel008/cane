@@ -6,7 +6,6 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<?php  ?>
 <head>
 
     <!--- basic page needs -->
@@ -20,21 +19,17 @@
     <meta http-equiv="refresh" content="3600">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="/css/buni">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/vendor.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-
-    <!-- script -->
     
 
     <!-- favicons -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139029947-1"></script>
@@ -63,11 +58,9 @@
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a>
-                   
+                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a></li>
                     <li class="dropdown"><a href="community.php">Community</a></li>
-                    <!-- <li class="dropdown"><a class="" href="/clients" title="clients">Community</li> -->
-                    <li class="dropdown"><a href="blog.php" >Programs</a></li>
+                    <li class="dropdown"><a href="blog.php">Programs</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -83,9 +76,6 @@
 
 <section class="s-home target-section" data-image-src="images/hero-bg1.jpg" data-natural-height=2000 data-natural-width=3000 data-parallax="scroll" data-position-y=center id="home">
 
-    <!-- <div class="overlay"></div>
-    <div class="shadow-overlay"></div> -->
-
     <div class="home-content">
 
         <div class="row home-content__main">
@@ -97,24 +87,11 @@
             </h1>
         </div>
 
-
     </div> <!-- end home-content -->
-
-    
-    <!-- end home-social -->
 
 </section> <!-- end s-home -->
 
-
-    </div> <!-- end about-stats -->
-
-    <div class="about__line"></div>
-
-</section> <!-- end s-about -->
-
-<!-- services ================================================== -->
 <section class="s-services" id='services'>
-
     <div class="row section-header has-bottom-sep">
         <div class="col-full">
             <h3 class="subhead">PROGRAMS</h3>
@@ -124,68 +101,56 @@
 
     <div class="row services-list block-1-2 block-tab-full">
     <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$db = "upload";
-$port = 3306;
+        $host = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "upload";
+        $port = 3306;
 
- // Create database connection
- $conn = new mysqli($host, $username, $password, $db, $port);
+        // Create database connection
+        $conn = new mysqli($host, $username, $password, $db, $port);
 
- // Check connection
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- }
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
- 
- $sql = "SELECT * FROM `blog`";
- $result = $conn->query($sql);
- 
- if ($result->num_rows > 0) { ?>
-    <div class="container" >
-    <div class="row ">
-        
-        <?php while ($row = $result->fetch_assoc()) { ?>
-            <div class="col-ld " style="margin-left:40px;">
-            <div class="card  " style="width: 30rem; margin-top:40px;">
-              <div class="card-body">
-              <img  src="./images/<?php echo $row['photo']; ?>" style="width: 280px; height: 200px; object-fit: cover;">
-              <h5 class="card-title"><?php echo $row['title']; ?></h5>
-            
-             <p class="card-text"><?php echo $row['content']; ?></p>
-             <a href="<?php echo $row['readmore']; ?>" class="card-link" style="color: #d8420d ">Read more</a>
-             
-  </div>
-</div>
-      
+        $sql = "SELECT * FROM `blog` ORDER BY `id` DESC";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) { ?>
+            <div class="container">
+                <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <?php while ($row = $result->fetch_assoc()) { ?>
+                                    <div class="col-ld" style="margin-left:40px;">
+                                        <div class="card" style="width: 30rem; margin-top:40px;">
+                                            <div class="card-body">
+                                                <img src="./images/<?php echo $row['photo']; ?>" style="width: 280px; height: 200px; object-fit: cover;">
+                                                <h5 class="card-title"><?php echo $row['title']; ?></h5>
+                                                <p class="card-text"><?php echo $row['content']; ?></p>
+                                                <a href="<?php echo $row['readmore']; ?>" class="card-link" style="color: #d8420d">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-              
-        <?php } ?>`
-        </div>
-        
-    </div>
-</div>
+        <?php } else {
+            echo "NO ITEMS UPLOADED";
+        }
 
- <?php
- } else {
-     echo "NO ITEMS UPLOADED";
- }
- 
-  
-  // Close statement and connection
- 
-?>
-        
-</div> <!-- end services-list -->
+        // Close connection
+        $conn->close();
+    ?>
+    </div> <!-- end services-list -->
 </section> 
 <!-- end s-services -->
-
-
-
-
-
-
 
 <!-- footer -->
 <footer>
@@ -236,9 +201,6 @@ $port = 3306;
     </div> <!-- end footer-bottom -->
 </footer> <!-- end footer -->
 
-
-
-
 <!-- Java Script -->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
@@ -257,8 +219,9 @@ $port = 3306;
     }
 </script>
 
-</body>
-
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/pace.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
 </html>

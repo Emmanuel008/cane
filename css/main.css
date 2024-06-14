@@ -1649,6 +1649,8 @@ input::-moz-focus-inner {
 
 .logo-link img {
     padding: 15px 15px 15px 0;
+    height: 70px;
+    width: auto;
 }
 
 .navigation {
@@ -2599,8 +2601,8 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-about {
-    padding-top: 16.2rem;
-    padding-bottom: 9rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background-color: #e7bb2a;
     color: #f1f1f1;
     position: relative;
@@ -2802,8 +2804,8 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-services {
-    padding-top: 16.2rem;
-    padding-bottom: 13.2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background-color: #FFFFFF;
     color: #e7bb2a;
     position: relative;
@@ -3186,8 +3188,8 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 .s-clients {
-    padding-top: 16.2rem;
-    padding-bottom: 16.8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background-color: #ffffff;
     color: #757575;
     position: relative;
@@ -3197,7 +3199,29 @@ html.no-csstransitions .home-content__main {
 /* -------------------------------------------------------------------
  * ## slider
  * ------------------------------------------------------------------- */
-.clients-outer {
+ .clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    gap: 10px; /* Optional: Adds space between images */
+}
+
+.clients__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ensure all containers have the same height */
+}
+
+.clients img {
+    height: 50px; /* Set the desired height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible within the set height */
+}
+
+
+ .clients-outer {
     margin-top: 3.6rem;
     padding-bottom: 9rem;
     text-align: center;
@@ -3206,16 +3230,29 @@ html.no-csstransitions .home-content__main {
 }
 
 .clients {
-    text-align: center;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    gap: 10px; /* Optional: Adds space between images */
 }
 
 .clients__slide {
-    display: block;
-    opacity: .55;
-    padding: 1.5rem 2.8rem;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ensure all containers have the same height */
+}
+
+
+
+
+.clients__slide {
+    /* display: block; */
+    /* opacity: .55; */
+    /* padding: 1.5rem 2.8rem; */
+    /* -webkit-transition: opacity 0.5s ease-in-out; P/
+    /* transition: opacity 0.5s ease-in-out; */
 }
 
 .clients__slide:hover,
