@@ -13,12 +13,16 @@ if (isset($_POST['upload'])) {
 
     // Move the uploaded file to the folder
     if (move_uploaded_file($tempname, $folder)) {
-        echo "Image uploaded successfully.<br>";
-    } else {
-        echo "Image upload failed.<br>";
-        exit();
-    }
 
+        echo "<script>alert('Image uploaded successfully.');</script>";
+    
+    } else {
+    
+        echo "<script>alert('Image upload failed.');</script>";
+    
+        exit();
+    
+    }
     // Sanitize user input
     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
     $content = isset($_POST['content']) ? htmlspecialchars($_POST['content']) : '';

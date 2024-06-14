@@ -78,6 +78,7 @@ if (isset($_POST['upload'])) {
     </style>
 </head>
 <body>
+    
 <div class="container"> 
     <div class="form-container">
         <!-- Placeholder photo at the top -->

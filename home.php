@@ -39,6 +39,27 @@
     gtag('js', new Date());
     gtag('config', 'UA-139029947-1');
 </script>
+<style>
+    .gtco-testimonials {
+    text-align: center;
+}
+
+.gtco-testimonials .card {
+    display: inline-block;
+    margin: 15px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.gtco-testimonials .card-img-top {
+    border-radius: 50%;
+    margin: 0 auto;
+    height: 350px;
+    width: 50px;
+
+}
+
+</style>
 </head>
 
 <body id="top">
@@ -373,46 +394,51 @@ in Tanzania.</br>
 
 <section>
 <div class="gtco-testimonials">
- <h2>Testimonials</h2>
- <div class="owl-carousel owl-carousel1 owl-theme">
-     <div>
-         <div class="card text-center">
-             <img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" height="500" width="50" alt="">
-             <div class="card-body">
-                 <h5>Mgasa Lucas<br /><span> BuniHub Member </span></h5>
-                 <p class="card-text">“ Thank for bunihub help me to create my prototype and moving fowardng for more collaboration ” </p>
-             </div>
-         </div>
-     </div>
-     <div>
-         <div class="card text-center">
-             <img class="card-img-top" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" height="500" width="50" alt="">
-             <div class="card-body">
-                 <h5>Elias Malema<br /><span> BuniHub Member </span></h5>
-                 <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
-             </div>
-         </div>
-     </div>
-     <div>
-         <div class="card text-center">
-             <img class="card-img-top" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" height="500" width="50" alt="">
-             <div class="card-body">
-                 <h5>Michael <br /><span> BuniHub Member </span></h5>
-                 <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
-             </div>
-         </div>
-     </div>
-     <div>
-         <div class="card text-center">
-             <img class="card-img-top" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" height="500" width="50" alt="">
-             <div class="card-body">
-                 <h5>Bernadetha Kweka<br /><span> BuniHub Member </span></h5>
-                 <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
-             </div>
-         </div>
-     </div>
- </div>
-</div>
+    <h2>Testimonials</h2>
+    <div class="owl-carousel owl-carousel1 owl-theme">
+        <div>
+            
+            <div class="card text-center">
+                <img class="card-img-top" style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
+                <div class="card-body">
+                    <h5>Mgasa Lucas<br /><span> BuniHub Member </span></h5>
+                    <p class="card-text">“ Thank for bunihub help me to create my prototype and moving fowardng for more collaboration ” </p>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+
+            <div class="card text-center">
+                <img class="card-img-top"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" alt="">
+                <div class="card-body">
+                    <h5>Elias Malema<br /><span> BuniHub Member </span></h5>
+                    <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
+                </div>
+            </div>
+        </div>
+        <div>
+       
+
+            <div class="card text-center">
+                <img class="card-img-top"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" alt="">
+                <div class="card-body">
+                    <h5>Michael <br /><span> BuniHub Member </span></h5>
+                    <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
+                </div>
+            </div>
+        </div>
+      
+            <div class="card text-center">
+                <img class="card-img-top1"style="width: 50%; height: 50%;" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
+                <div class="card-body">
+                    <h5>Bernadetha Kweka<br /><span> BuniHub Member </span></h5>
+                    <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat ” </p>
+                </div>
+            </div>
+        </div>
+ 
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -549,8 +575,20 @@ in Tanzania.</br>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
 <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         var lazyloadImages = document.querySelectorAll("img.lazy");
