@@ -127,7 +127,7 @@
                     while ($row = $result->fetch_assoc()) {?>
         <div class="carousel-item <?php echo $activeClass;?>">
           <div class="card">
-            <div style="width: auto; height: 500px;">
+            <div style="width: auto; height: 300px;">
             <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
 
             </div>
