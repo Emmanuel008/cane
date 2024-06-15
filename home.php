@@ -58,6 +58,61 @@
     width: 50px;
 
 }
+.carousel-inner {
+            padding: 1em;
+        }
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 500px;
+        }
+        .card .card-body {
+            overflow: hidden;
+        }
+        .card-title,
+        .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                margin-right: 0;
+                flex: 0 0 33.333333%;
+                display: block;
+            }
+            .carousel-inner {
+                display: flex;
+            }
+        }
+        .card .img-wrapper {
+            max-width: 100%;
+            height: 13em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card img {
+            max-height: 100%;
+        }
+        @media (max-width: 767px) {
+            .card .img-wrapper {
+                height: 17em;
+            }
+        }
 
 </style>
 </head>
@@ -76,11 +131,10 @@
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.php" title="about">Home</a>
-                    <li class="dropdown"><a href="do.html">Program</a></li>
-                    <li class="dropdown"><a href="story.html">Success Stories</a></li>
+                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a>
+                    
                     <li class="dropdown"><a href="community.php">Community</a></li>
-                    <li class="dropdown"><a href="blog.php">News</a></li>
+                    <li class="dropdown"><a href="blog.php">Programs</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -103,16 +157,55 @@
     </video>
     <div class="home-content">
         <div class="row home-content__main">
-            <h3></h3>
+            <h3>BuniHub Mission</h3>
             <h1>
-                "HUB OF HUBS"
+                Building a stable innovation <br> technology and
+                entrepreneurship ecosystem in Africa.
             </h1>
-           
+            <div class="home-content__buttons">
+                <a class="btn btn--stroke" href="#" target="_blank">
+                    Company Profile
+                </a>
+                <a class="smoothscroll btn btn--stroke" href="#about">
+                    About Us
+                </a>
+            </div>
         </div>
         <div class="home-content__scroll">
-           
+            <a class="scroll-link smoothscroll" href="#about">
+                <span>Scroll Down</span>
+            </a>
+        </div>
+        <div class="home-content__line"></div>
     </div> <!-- end home-content -->
 
+    <ul class="home-social">
+        <li>
+            <a href="#" target="blank">
+                <i aria-hidden="true" class="fa fa-facebook"></i><span>Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="" target="blank">
+                <i aria-hidden="true" class="fa fa-twitter"></i><span>Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="" target="blank">
+                <i aria-hidden="true" class="fa fa-instagram"></i><span>Instagram</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="blank">
+                <i aria-hidden="true" class="fa fa-youtube"></i><span>Youtube</span>
+            </a>
+        </li>
+        <li>
+            <a href="S" target="blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i><span>LinkedIn</span>
+            </a>
+        </li>
+    </ul> <!-- end home-social -->
 </section> <!-- end s-home -->
 
 
@@ -138,73 +231,91 @@
 
     <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
 
+        <div class="col-block stats__col ">
+            <div class="stats__counts">50+</div>
+            <h5>Strategic Partners</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__counts">300K+</div>
+            <h5>Seed Fund Offered</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__counts">150+</div>
+            <h5>Founders Engaged</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__counts">5000+</div>
+            <h5>Entrepreneurs Reached</h5>
+        </div>
+    </div> <!-- end about-stats -->
+
     <div class="about__line"></div>
 
 </section> <!-- end s-about -->
 <section class="s-services" id="services">
-<div class="row section-header has-bottom-sep" data-aos="fade-up">
-        <div class="col-full">
-            <h3 class="subhead">What's happening</h3>
-            <h1 class="display-2">Buni Hub</h1>
-        </div>
-    </div> <!-- end section-header -->
-<div id="carouselExampleControls" class="carousel">
-        <div class="carousel-inner">
-
-            <?php
-                $host = "localhost";
-                $username = "root";
-                $password = "";
-                $db = "upload";
-                $port = 3306;
-
-                // Create database connection
-                $conn = new mysqli($host, $username, $password, $db, $port);
-                if ($conn->connect_error) {
-                    die("Connection failed: ". $conn->connect_error);
-                }
-
-                $sql = "SELECT * FROM `happen` ORDER BY `id` DESC";
-                $result = $conn->query($sql);
-                $activeClass = 'active';
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {?>
-        <div class="carousel-item <?php echo $activeClass;?>">
-          <div class="card">
-            <div style="width: auto; height: 300px;">
-            <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
-
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What's happening</h3>
+                <h1 class="display-2">Buni Hub</h1>
             </div>
-            <div class="card-body">
-            <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
-            <p class="card-text">“ <?php echo $row['description'];?> ”</p>
-              <a  href="<?php echo $row['link'];?>" class="btn btn-primary">Read more</a>
-            </div>
-          </div>
         </div>
-                    
+        <!-- end section-header -->
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <?php
+                    $host = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $db = "upload";
+                    $port = 3306;
+
+                    // Create database connection
+                    $conn = new mysqli($host, $username, $password, $db, $port);
+                    if ($conn->connect_error) {
+                        die("Connection failed: ". $conn->connect_error);
+                    }
+
+                    $sql = "SELECT * FROM `happen` ORDER BY `id` DESC";
+                    $result = $conn->query($sql);
+                    $activeClass = 'active';
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {?>
+                            <div class="carousel-item <?php echo $activeClass;?>">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="./images/<?php echo $row['photo'];?>" class="d-block w-100" alt="">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['title'];?><br /><span>Program Member</span></h5>
+                                        <p class="card-text">“ <?php echo $row['description'];?> ”</p>
+                                        <a href="<?php echo $row['link'];?>" class="btn btn-primary">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
                         <?php
                         $activeClass = '';
+                        }
+                    } else {
+                        echo "<div class='col-full text-center'>NO ITEMS UPLOADED</div>";
                     }
-                } else {
-                    echo "NO ITEMS UPLOADED";
-                }
 
-                $conn->close();
-           ?>
+                    $conn->close();
+                ?>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+    </section>
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-
-    </div>
-</section>
 
 
 <!-- services -->
@@ -440,22 +551,19 @@ in Tanzania.</br>
     <div class="row clients-outer item-center justify-content-center" data-aos="">
         <div class="col-full">
             <div class="clients">
-                <a class="clients__slide" href="#0" title=""><img src="images/sweden.png" class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/andelllla.png" class="object-fit"/></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/google.png"  class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/download.png" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/costech.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/andela.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/google.png"  class="object-fit" alt="partner logo" width="200"  height="100"/></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/download.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/siili.png"class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/eu project.png" class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/eu pic.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/afrilab.jfif" class="object-fit"/></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/atbn.jfif" class="object-fit"/></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/itc.jfif" class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/finland.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/hapoa.jfif" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/dpixel.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/stimul.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/porto.png" class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/eu.png" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/ou.png" class="object-fit" /></a>
             </div> 
         </div> 
     </div>

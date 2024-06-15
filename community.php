@@ -41,6 +41,63 @@
         gtag('js', new Date());
         gtag('config', 'UA-139029947-1');
     </script>
+    <style>
+ .carousel-inner {
+            padding: 1em;
+        }
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 500px;
+        }
+        .card .card-body {
+            overflow: hidden;
+        }
+        .card-title,
+        .card-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                margin-right: 0;
+                flex: 0 0 33.333333%;
+                display: block;
+            }
+            .carousel-inner {
+                display: flex;
+            }
+        }
+        .card .img-wrapper {
+            max-width: 100%;
+            height: 13em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card img {
+            max-height: 100%;
+        }
+        @media (max-width: 767px) {
+            .card .img-wrapper {
+                height: 17em;
+            }
+        }
+    </style>
 </head>
 
 <body id="top">

@@ -79,6 +79,7 @@ if (isset($_POST['upload'])) {
             margin-right: auto;
             width: 100px;
         }
+
     </style>
 </head>
 <body>
