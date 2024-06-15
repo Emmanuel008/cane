@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-
-    <!--- basic page needs -->
     <meta charset="utf-8">
     <title>Buni Hub</title>
-    <meta name="description" content="Building a stable innovation technology and
-                    entrepreneurship ecosystem in Africa">
+    <meta name="description" content="Building a stable innovation technology and entrepreneurship ecosystem in Africa">
     <meta name="author" content="BuniHub">
-
-    <!-- mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="3600">
-
-    <!-- CSS -->
+    
+    <!-- CSS Links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -22,50 +17,45 @@
     <link rel="stylesheet" href="css/vendor.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="index.css"/>
-
-    <!-- favicons -->
+    <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139029947-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139029947-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-139029947-1');
+    </script>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-139029947-1');
-</script>
-<style>
-    .gtco-testimonials {
-    text-align: center;
-}
-
-.gtco-testimonials .card {
-    display: inline-block;
-    margin: 15px;
-    max-width: 300px;
-    width: 100%;
-}
-
-.gtco-testimonials .card-img-top {
-    border-radius: 50%;
-    margin: 0 auto;
-    height: 350px;
-    width: 50px;
-
-}
-.carousel-inner {
+    <style>
+        .gtco-testimonials {
+            text-align: center;
+        }
+        .gtco-testimonials .card {
+            display: inline-block;
+            margin: 15px;
+            max-width: 300px;
+            width: 100%;
+        }
+        .gtco-testimonials .card-img-top {
+            border-radius: 50%;
+            margin: 0 auto;
+            height: 350px;
+            width: 50px;
+        }
+        .carousel-inner {
             padding: 1em;
         }
         .card {
             margin: 0 0.5em;
             box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
             border: none;
-            display: flex;
+            display: content;
             flex-direction: column;
             height: 95%;
             width: 380px;
@@ -73,14 +63,12 @@
         .card .card-body {
             overflow: hidden;
         }
-        .card-title,
-        .card-text {
+        .card-title, .card-text {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        .carousel-control-prev,
-        .carousel-control-next {
+        .carousel-control-prev, .carousel-control-next {
             background-color: #e1e1e1;
             width: 6vh;
             height: 6vh;
@@ -113,145 +101,110 @@
                 height: 17em;
             }
         }
-
-</style>
+    </style>
 </head>
 
 <body id="top">
 
-<!-- header -->
-<header class="s-header">
-<div class="nav-menu">
-        <div class="nav-menu-content">
-            <div class="logo">
-                <a class="logo-link" href="/">
-                    <img alt="Homepage" src="images/logo.jpeg" >
-                </a>
-            </div>
-            <div class="navigation">
-                <ul class="navigation_list">
-                <li class="dropdown"><a href="do.html">Program</a></li>
+    <!-- Header -->
+    <header class="s-header">
+        <div class="nav-menu">
+            <div class="nav-menu-content">
+                <div class="logo">
+                    <a class="logo-link" href="/">
+                        <img alt="Homepage" src="images/logo.jpeg">
+                    </a>
+                </div>
+                <div class="navigation">
+                    <ul class="navigation_list">
+                        <li class="dropdown"><a href="do.html">Program</a></li>
                         <li class="dropdown"><a href="story.html">Success Stories</a></li>
                         <li class="dropdown"><a href="community.php">Community</a></li>
                         <li class="dropdown"><a href="blog.php">News</a></li>
                         <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
-
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+        <a class="nav-menu-toggle" href="#0" id="nav-menu-toggle">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+    </header>
 
-    <a class="nav-menu-toggle" href="#0" id="nav-menu-toggle">
-        <span class="header-menu-text">Menu</span>
-        <span class="header-menu-icon"></span>
-    </a>
-</header> <!-- end s-header -->
+    <!-- Home Section -->
+    <section class="s-home target-section" data-image-src="images/hero2.png" data-natural-height=2000 data-natural-width=3000 data-parallax="scroll" data-position-y=center id="home">
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+        <video autoplay loop muted playsinline>
+            <source src="images/hero.mp4" type="video/mp4">
+        </video>
+        <div class="home-content">
+            <div class="row home-content__main">
+                <h3>BuniHub Mission</h3>
+                <h1>Building a stable innovation <br> technology and entrepreneurship ecosystem in Africa.</h1>
+                <div class="home-content__buttons">
+                    <a class="btn btn--stroke" href="#" target="_blank">Company Profile</a>
+                    <a class="smoothscroll btn btn--stroke" href="#about">About Us</a>
+                </div>
+            </div>
+            <div class="home-content__scroll">
+                <a class="scroll-link smoothscroll" href="#about"><span>Scroll Down</span></a>
+            </div>
+            <div class="home-content__line"></div>
+        </div>
+        <ul class="home-social">
+            <li><a href="#" target="blank"><i aria-hidden="true" class="fa fa-facebook"></i><span>Facebook</span></a></li>
+            <li><a href="" target="blank"><i aria-hidden="true" class="fa fa-twitter"></i><span>Twitter</span></a></li>
+            <li><a href="" target="blank"><i aria-hidden="true" class="fa fa-instagram"></i><span>Instagram</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="blank"><i aria-hidden="true" class="fa fa-youtube"></i><span>Youtube</span></a></li>
+            <li><a href="S" target="blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
+        </ul>
+    </section>
 
-<!-- home -->
-<section class="s-home target-section" data-image-src="images/hero2.png" data-natural-height=2000
-    data-natural-width=3000 data-parallax="scroll" data-position-y=center id="home">
-    <div class="overlay"></div>
-    <div class="shadow-overlay"></div>
-    <video autoplay loop muted playsinline>
-        <source src="images/hero.mp4" type="video/mp4">
-    </video>
-    <div class="home-content">
-        <div class="row home-content__main">
-            <h3>BuniHub Mission</h3>
-            <h1>
-                Building a stable innovation <br> technology and
-                entrepreneurship ecosystem in Africa.
-            </h1>
-            <div class="home-content__buttons">
-                <a class="btn btn--stroke" href="#" target="_blank">
-                    Company Profile
-                </a>
-                <a class="smoothscroll btn btn--stroke" href="#about">
-                    About Us
-                </a>
+    <!-- About Section -->
+    <section class="s-about" id='about'>
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">About Us</h3>
+                <h1 class="display-1 display-1--light">We Are BuniHub</h1>
             </div>
         </div>
-        <div class="home-content__scroll">
-            <a class="scroll-link smoothscroll" href="#about">
-                <span>Scroll Down</span>
-            </a>
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                    Buni Innovation Hub is the first Innovation Space established in Tanzania under the Commission for Science and Technology <strong>(COSTECH)</strong>. Buni is primarily focused on strengthening the innovation ecosystem through coordination and support to the innovation enablers (innovation spaces) and startups. Buni has been a home to over 10000 youth and 20+ innovation spaces that have benefited from the innovation services offered by Buni Hub. Since it started, Buni has swayed the vibrant innovation ecosystem that resulted in the growth of innovation spaces and startup companies in Tanzania.
+                </p>
+            </div>
         </div>
-        <div class="home-content__line"></div>
-    </div> <!-- end home-content -->
-
-    <ul class="home-social">
-        <li>
-            <a href="#" target="blank">
-                <i aria-hidden="true" class="fa fa-facebook"></i><span>Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a href="" target="blank">
-                <i aria-hidden="true" class="fa fa-twitter"></i><span>Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a href="" target="blank">
-                <i aria-hidden="true" class="fa fa-instagram"></i><span>Instagram</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="blank">
-                <i aria-hidden="true" class="fa fa-youtube"></i><span>Youtube</span>
-            </a>
-        </li>
-        <li>
-            <a href="S" target="blank">
-                <i aria-hidden="true" class="fa fa-linkedin"></i><span>LinkedIn</span>
-            </a>
-        </li>
-    </ul> <!-- end home-social -->
-</section> <!-- end s-home -->
-
-
-
-<!-- about -->
-<section class="s-about" id='about'>
-    <div class="row section-header has-bottom-sep" data-aos="fade-up">
-        <div class="col-full">
-            <h3 class="subhead subhead--dark">About Us</h3>
-            <h1 class="display-1 display-1--light">We Are BuniHub</h1>
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+            <div class="col-block stats__col">
+                <div class="stats__counts">50+</div>
+                <h5>Strategic Partners</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__counts">300K+</div>
+                <h5>Seed Fund Offered</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__counts">150+</div>
+                <h5>Founders Engaged</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__counts">20+</div>
+                <h5>Innovation Spaces Supported</h5>
+            </div>
         </div>
-    </div> <!-- end section-header -->
-
-    <div class="row about-desc" data-aos="fade-up">
-        <div class="col-full">
-            <p>
-                Buni Innovation Hub is the first Innovation Space established in Tanzania under the Commission for Science and Technology <strong>(COSTECH)</strong>, Buni is primarily focused on strengthening the innovation ecosystem through coordination and support to the innovation enablers (innovation spaces) and startups. 
- Buni has been a home to over 10000 youth and 20+ innovation spaces that has been the beneficiary of the innovation services offered by Buni Hub. Since it Started, Buni has swayed the vibrant innovation ecosystem that resulted in the growth of innovation spaces and startups companies in Tanzania.
-
-            </p>
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Vision</h3>
+                <p>Creating a viable and stable innovation, technology, and entrepreneurship ecosystem in Tanzania and Africa.</p>
+            </div>
         </div>
-    </div> <!-- end about-desc -->
+    </section>
 
-    <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
-
-        <div class="col-block stats__col ">
-            <div class="stats__counts">50+</div>
-            <h5>Strategic Partners</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">300K+</div>
-            <h5>Seed Fund Offered</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">150+</div>
-            <h5>Founders Engaged</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">5000+</div>
-            <h5>Entrepreneurs Reached</h5>
-        </div>
-    </div> <!-- end about-stats -->
-
-    <div class="about__line"></div>
-
-</section> <!-- end s-about -->
+    <!-- Testimonials Section -->
+  
 <section class="s-services" id="services">
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
@@ -284,7 +237,7 @@
                         while ($row = $result->fetch_assoc()) {?>
                             <div class="carousel-item <?php echo $activeClass;?>">
                                 <div class="card">
-                                    <div class="img-wrapper">
+                                    <div style="width: auto; height: 250px;">
                                         <img src="./images/<?php echo $row['photo'];?>" class="d-block w-100" alt="">
                                     </div>
                                     <div class="card-body">
@@ -627,11 +580,8 @@ in Tanzania.</br>
     </div> <!-- end footer-bottom -->
 </footer> <!-- end footer -->
 
-<!-- preloader -->
-
-
-<!-- Java Script -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- JavaScript Links -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
@@ -648,90 +598,26 @@ in Tanzania.</br>
       crossorigin="anonymous"
     ></script>
     <script src="index.js"></script>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var lazyloadImages = document.querySelectorAll("img.lazy");
-        var lazyloadThrottleTimeout;
-
-        function lazyload() {
-            if (lazyloadThrottleTimeout) {
-                clearTimeout(lazyloadThrottleTimeout);
-            }
-
-            lazyloadThrottleTimeout = setTimeout(function () {
-                var scrollTop = window.pageYOffset;
-                lazyloadImages.forEach(function (img) {
-                    if (img.offsetTop < (window.innerHeight + scrollTop)) {
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:3
                     }
-                });
-                if (lazyloadImages.length == 0) {
-                    document.removeEventListener("scroll", lazyload);
-                    window.removeEventListener("resize", lazyload);
-                    window.removeEventListener("orientationChange", lazyload);
                 }
-            }, 20);
-        }
-
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
-    });
-
-</script> -->
-<script>
-  if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-      img.src = img.dataset.src;
-    });
-  } else {
-    // Dynamically import the LazySizes library
-    const script = document.createElement('script');
-    script.src =
-      '/js/lazysizes.min.js';
-    document.body.appendChild(script);
-  }
-</script>
-
-
-<script>
-
-(function () {
-"use strict";
-
-var carousels = function () {
-$(".owl-carousel1").owlCarousel({
-  loop: true,
-  center: true,
-  margin: 0,
-  responsiveClass: true,
-  nav: false,
-  responsive: {
-    0: {
-      items: 1,
-      nav: false
-    },
-    680: {
-      items: 2,
-      nav: false,
-      loop: false
-    },
-    1000: {
-      items: 3,
-      nav: true
-    }
-  }
-});
-};
-
-(function ($) {
-carousels();
-})(jQuery);
-})();
-
-</script>
+            });
+        });
+    </script>
 
 </body>
 </html>

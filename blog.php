@@ -56,11 +56,12 @@
             border: none;
             display: flex;
             flex-direction: column;
-            height: 95%;
+            height: 100%;
             width: 380px;
         }
         .card .card-body {
             overflow: hidden;
+            flex-grow: 1;
         }
         .card-title,
         .card-text {
@@ -93,9 +94,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         .card img {
             max-height: 100%;
+            max-width: 100%;
+            object-fit: cover;
         }
         @media (max-width: 767px) {
             .card .img-wrapper {
@@ -185,15 +189,15 @@
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {?>
         <div class="carousel-item <?php echo $activeClass;?>">
-          <div class="card">
-            <div style="width: auto; height: 300px;">
-            <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
+          <div class="card">    
+            <div class="img-wrapper">
+            <img src="./images/<?php echo $row['photo'];?>" alt="">
 
             </div>
             <div class="card-body">
             <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
             <p class="card-text">“ <?php echo $row['content'];?> ”</p>
-              <a  href="<?php echo $row['readmore'];?>" class="btn btn-primary">Read more</a>
+              <a href="<?php echo $row['readmore'];?>" class="btn btn-primary">Read more</a>
             </div>
           </div>
         </div>
@@ -210,10 +214,10 @@
         </div>
 
         <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
 

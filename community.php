@@ -42,7 +42,7 @@
         gtag('config', 'UA-139029947-1');
     </script>
     <style>
- .carousel-inner {
+        .carousel-inner {
             padding: 1em;
         }
         .card {
@@ -51,11 +51,12 @@
             border: none;
             display: flex;
             flex-direction: column;
-            height: 95%;
+            height: 100%;
             width: 380px;
         }
         .card .card-body {
             overflow: hidden;
+            flex-grow: 1;
         }
         .card-title,
         .card-text {
@@ -88,9 +89,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         .card img {
             max-height: 100%;
+            max-width: 100%;
+            object-fit: cover;
         }
         @media (max-width: 767px) {
             .card .img-wrapper {
@@ -113,13 +117,12 @@
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                <li class="dropdown"><a class="" href="home.php" title="about">Home</a>
+                    <li class="dropdown"><a class="" href="home.php" title="about">Home</a>
                     <li class="dropdown"><a href="do.html">Program</a></li>
                     <li class="dropdown"><a href="story.html">Success Stories</a></li>
                     <li class="dropdown"><a href="community.php">Community</a></li>
                     <li class="dropdown"><a href="blog.php">News</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
-
                 </ul>
             </div>
         </div>
@@ -142,9 +145,8 @@
 
 <!-- services section -->
 <section class="s-services" id="services">
-<div id="carouselExampleControls" class="carousel">
+    <div id="carouselExampleControls" class="carousel">
         <div class="carousel-inner">
-
             <?php
                 $host = "localhost";
                 $username = "root";
@@ -164,21 +166,19 @@
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {?>
-        <div class="carousel-item <?php echo $activeClass;?>">
-          <div class="card">
-            <div style="width: auto; height: 300px;">
-            <img src="./images/<?php echo $row['photo'];?>" style="width: 100%; height: 100%;" alt="">
-
-            </div>
-            <div class="card-body">
-            <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
-            <p class="card-text">“ <?php echo $row['description'];?> ”</p>
-              <a  href="<?php echo $row['link'];?>" class="btn btn-primary">Read more</a>
-            </div>
-          </div>
-        </div>
-                    
-                        <?php
+                        <div class="carousel-item <?php echo $activeClass;?>">
+                            <div class="card">
+                                <div class="img-wrapper">
+                                    <img src="./images/<?php echo $row['photo'];?>" class="img" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5><?php echo $row['title'];?><br /><span> Program Member </span></h5>
+                                    <p class="card-text">“ <?php echo $row['description'];?> ”</p>
+                                    <a href="<?php echo $row['link'];?>" class="btn btn-primary">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
                         $activeClass = '';
                     }
                 } else {
@@ -186,19 +186,16 @@
                 }
 
                 $conn->close();
-
-                
-           ?>
+            ?>
         </div>
 
         <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
 </section>
 
@@ -270,17 +267,9 @@
 </script>
 <!-- jQuery and Owl Carousel JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="index.js"></script>
 
 </body>
 </html>
