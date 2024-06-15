@@ -76,10 +76,11 @@
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a>
-                    
+                    <li class="dropdown"><a class="" href="home.php" title="about">Home</a>
+                    <li class="dropdown"><a href="do.html">Program</a></li>
+                    <li class="dropdown"><a href="story.html">Success Stories</a></li>
                     <li class="dropdown"><a href="community.php">Community</a></li>
-                    <li class="dropdown"><a href="blog.php">Programs</a></li>
+                    <li class="dropdown"><a href="blog.php">News</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -102,55 +103,16 @@
     </video>
     <div class="home-content">
         <div class="row home-content__main">
-            <h3>BuniHub Mission</h3>
+            <h3></h3>
             <h1>
-                Building a stable innovation <br> technology and
-                entrepreneurship ecosystem in Africa.
+                "HUB OF HUBS"
             </h1>
-            <div class="home-content__buttons">
-                <a class="btn btn--stroke" href="#" target="_blank">
-                    Company Profile
-                </a>
-                <a class="smoothscroll btn btn--stroke" href="#about">
-                    About Us
-                </a>
-            </div>
+           
         </div>
         <div class="home-content__scroll">
-            <a class="scroll-link smoothscroll" href="#about">
-                <span>Scroll Down</span>
-            </a>
-        </div>
-        <div class="home-content__line"></div>
+           
     </div> <!-- end home-content -->
 
-    <ul class="home-social">
-        <li>
-            <a href="#" target="blank">
-                <i aria-hidden="true" class="fa fa-facebook"></i><span>Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a href="" target="blank">
-                <i aria-hidden="true" class="fa fa-twitter"></i><span>Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a href="" target="blank">
-                <i aria-hidden="true" class="fa fa-instagram"></i><span>Instagram</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="blank">
-                <i aria-hidden="true" class="fa fa-youtube"></i><span>Youtube</span>
-            </a>
-        </li>
-        <li>
-            <a href="S" target="blank">
-                <i aria-hidden="true" class="fa fa-linkedin"></i><span>LinkedIn</span>
-            </a>
-        </li>
-    </ul> <!-- end home-social -->
 </section> <!-- end s-home -->
 
 
@@ -175,24 +137,6 @@
     </div> <!-- end about-desc -->
 
     <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
-
-        <div class="col-block stats__col ">
-            <div class="stats__counts">50+</div>
-            <h5>Strategic Partners</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">300K+</div>
-            <h5>Seed Fund Offered</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">150+</div>
-            <h5>Founders Engaged</h5>
-        </div>
-        <div class="col-block stats__col">
-            <div class="stats__counts">5000+</div>
-            <h5>Entrepreneurs Reached</h5>
-        </div>
-    </div> <!-- end about-stats -->
 
     <div class="about__line"></div>
 
@@ -496,19 +440,22 @@ in Tanzania.</br>
     <div class="row clients-outer item-center justify-content-center" data-aos="">
         <div class="col-full">
             <div class="clients">
-                <a class="clients__slide" href="#0" title=""><img src="images/costech.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/andela.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/google.png"  class="object-fit" alt="partner logo" width="200"  height="100"/></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/download.png" class="object-fit" alt="partner logo" width="200"  height="100"/></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/sweden.png" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/andelllla.png" class="object-fit"/></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/google.png"  class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/download.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/siili.png"class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/eu project.png" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/eu pic.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/afrilab.jfif" class="object-fit"/></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/atbn.jfif" class="object-fit"/></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/itc.jfif" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/finland.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/hapoa.jfif" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/dpixel.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/stimul.png" class="object-fit" /></a>
                 <a class="clients__slide" href="#0" title=""><img src="images/porto.png" class="object-fit" /></a>
-                <a class="clients__slide" href="#0" title=""><img src="images/ou.png" class="object-fit" /></a>
+                <a class="clients__slide" href="#0" title=""><img src="images/eu.png" class="object-fit" /></a>
             </div> 
         </div> 
     </div>

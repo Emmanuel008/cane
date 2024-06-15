@@ -61,10 +61,12 @@
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a></li>
-                    <li class="dropdown"><a href="community.php">Community</a></li>
-                    <li class="dropdown"><a href="blog.php">Programs</a></li>
-                    <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
+                <li class="dropdown"><a href="do.html">Program</a></li>
+                        <li class="dropdown"><a href="story.html">Success Stories</a></li>
+                        <li class="dropdown"><a href="community.php">Community</a></li>
+                        <li class="dropdown"><a href="blog.php">News</a></li>
+                        <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
+
                 </ul>
             </div>
         </div>
@@ -171,7 +173,7 @@
             <p>
                 <a href="home.html" target="">About</a> <br>
                 <a href="community.php" target="">Community</a> <br>
-                <a href="blog.php" target="">Programs</a> <br>
+                <a href="blog.php" target="">News</a> <br>
                 <a class="" href="contact.html">Contact</a>
             </p>
         </div>
