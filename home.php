@@ -67,8 +67,8 @@
             border: none;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            width: 500px;
+            height: 95%;
+            width: 380px;
         }
         .card .card-body {
             overflow: hidden;
@@ -121,21 +121,21 @@
 
 <!-- header -->
 <header class="s-header">
-    <div class="nav-menu">
+<div class="nav-menu">
         <div class="nav-menu-content">
             <div class="logo">
                 <a class="logo-link" href="/">
                     <img alt="Homepage" src="images/logo.jpeg" >
-
                 </a>
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.html" title="about">Home</a>
-                    
-                    <li class="dropdown"><a href="community.php">Community</a></li>
-                    <li class="dropdown"><a href="blog.php">Programs</a></li>
-                    <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
+                <li class="dropdown"><a href="do.html">Program</a></li>
+                        <li class="dropdown"><a href="story.html">Success Stories</a></li>
+                        <li class="dropdown"><a href="community.php">Community</a></li>
+                        <li class="dropdown"><a href="blog.php">News</a></li>
+                        <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
+
                 </ul>
             </div>
         </div>

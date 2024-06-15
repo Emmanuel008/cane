@@ -56,8 +56,8 @@
             border: none;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            width: 500px;
+            height: 95%;
+            width: 380px;
         }
         .card .card-body {
             overflow: hidden;
