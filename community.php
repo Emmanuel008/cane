@@ -29,7 +29,7 @@
 
     <!-- favicons -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/buni logo.png" type="image/x-icon">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139029947-1"></script>
@@ -112,12 +112,12 @@
         <div class="nav-menu-content">
             <div class="logo">
                 <a class="logo-link" href="/">
-                    <img alt="Homepage" src="images/logo.jpeg">
+                    <img alt="Homepage" src="images/buni logo.png">
                 </a>
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                    <li class="dropdown"><a class="" href="home.php" title="about">Home</a>
+                    <li class="dropdown"><a class="" href="index.php" title="about">Home</a>
                     <li class="dropdown"><a href="do.html">Program</a></li>
                     <li class="dropdown"><a href="story.html">Success Stories</a></li>
                     <li class="dropdown"><a href="community.php">Community</a></li>
@@ -133,15 +133,24 @@
     </a>
 </header>
 
-<!-- home section -->
-<section class="s-home" id="home">
-    <div class="home-content">
-        <div class="row home-content__main">
-            <h3>Welcome</h3>
-            <h1><br>Buni Hub Community</br>Looking for a comfortable working space?</h1>
+
+</header> <!-- end s-header -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+
+        <div class="row section-header">
+            <div class="col-full">
+                <h3 class="subhead"></h3>
+                <h1 class="display-2 display-2--light">Community Program and Meetup</h1>
+                            </div>
         </div>
-    </div>
-</section>
+                </div> 
+    </section> <!-- end s-contact -->
+
+<!-- home section -->
+     
+
 
 <!-- services section -->
 <section class="s-services" id="services">
@@ -198,7 +207,7 @@
         </a>
     </div>
 </section>
-
+  
 <!-- footer -->
 <footer>
     <div class="row footer-main">
@@ -215,10 +224,10 @@
         <div class="col-three tab-full footer-subscribe">
             <h4>Connect with us</h4>
             <p>
-                <a href="https://www.facebook.com/VenturesSahara" target="_blank">Facebook</a><br>
+                <a href="https://www.facebook.com/bunihub" target="_blank">Facebook</a><br>
                 <a href="https://twitter.com/bunihub" target="_blank">Twitter</a><br>
                 <a href="https://www.instagram.com/bunihub" target="_blank">Instagram</a><br>
-                <a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="_blank">Youtube</a><br>
+                <a href="https://www.youtube.com/@bunihub4341" target="_blank">Youtube</a><br>
                 <a href="https://www.linkedin.com/company/bunihub" target="_blank">LinkedIn</a>
             </p>
         </div>

@@ -32,7 +32,7 @@
 
     <!-- favicons -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/buni logo.png" type="image/x-icon">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139029947-1"></script>
@@ -117,17 +117,17 @@
         <div class="nav-menu-content">
             <div class="logo">
                 <a class="logo-link" href="/">
-                    <img alt="Homepage" src="images/logo.jpeg" >
+                    <img alt="Homepage" src="images/buni logo.png" >
                 </a>
             </div>
             <div class="navigation">
                 <ul class="navigation_list">
-                <li class="dropdown"><a href="do.html">Program</a></li>
-                        <li class="dropdown"><a href="story.html">Success Stories</a></li>
-                        <li class="dropdown"><a href="community.php">Community</a></li>
-                        <li class="dropdown"><a href="blog.php">News</a></li>
-                        <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
-
+                <li class="dropdown"><a class="" href="index.php" title="about">Home</a></li>
+                    <li class="dropdown"><a href="do.html">Program</a></li>
+                    <li class="dropdown"><a href="story.html">Success Stories</a></li>
+                    <li class="dropdown"><a href="community.php">Community</a></li>
+                    <li class="dropdown"><a href="blog.php">News</a></li>
+                    <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -138,30 +138,29 @@
         <span class="header-menu-icon"></span>
     </a>
 </header> 
-<!-- end s-header -->
 
-<section class="s-home target-section" data-image-src="images/hero-bg1.jpg" data-natural-height=2000 data-natural-width=3000 data-parallax="scroll" data-position-y=center id="home">
+</header> <!-- end s-header -->
+    <section id="contact" class="s-contact">
 
-    <div class="home-content">
+        <div class="overlay"></div>
 
-        <div class="row home-content__main">
-
-            <h3>Welcome </h3>
-            <h1>
-                <br>Buni Hub Programs</br>
-              Different program conducted at Bunihub
-            </h1>
+        <div class="row section-header">
+            <div class="col-full">
+                <h3 class="subhead"></h3>
+                <h1 class="display-2 display-2--light">Keep Updated with News</h1>
+                            </div>
         </div>
+                </div> 
+    </section> <!-- end s-contact -->
 
-    </div> <!-- end home-content -->
+<!-- home section -->
 
-</section> <!-- end s-home -->
 
 <section class="s-services" id='services'>
     <div class="row section-header has-bottom-sep">
         <div class="col-full">
-            <h3 class="subhead">PROGRAMS</h3>
-            <h1 class="display-2">BuniHub Programs</h1>
+            <h3 class="subhead">NEWS</h3>
+            <h1 class="display-2"></h1>
         </div>
     </div> <!-- end section-header -->
 
@@ -242,11 +241,11 @@
         <div class="col-three tab-full footer-subscribe">
             <h4>Connect with us</h4>
             <p>
-                <a href="https://www.facebook.com/VenturesSahara" target="_blank">Facebook</a><br>
+                <a href="https://www.facebook.com/bunihub" target="_blank">Facebook</a><br>
                 <a href="https://twitter.com/bunihub" target="_blank">Twitter</a><br>
                 <a href="https://www.instagram.com/bunihub" target="_blank">Instagram</a><br>
-                <a href="https://www.youtube.com/channel/UCiOnji8o4Wt8b5ST-E57KjQ" target="_blank">Youtube</a><br>
-                <a href="https://www.linkedin.com/company/bunihub" target="_blank">LinkedIn</a>
+                <a href="https://www.youtube.com/@bunihub4341" target="_blank">Youtube</a><br>
+                <a href="https://www.linkedin.com/bunihub" target="_blank">LinkedIn</a>
             </p>
         </div>
 

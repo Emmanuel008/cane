@@ -82,7 +82,7 @@ if (isset($_POST['upload'])) {
 <div class="container"> 
     <div class="form-container">
         <!-- Placeholder photo at the top -->
-        <img alt="Homepage" src="images/logo.jpeg" style="max-width: 100%; margin-bottom: 20px;">
+        <img alt="Homepage" src="images/buni logo.png" style="max-width: 100%; margin-bottom: 20px;">
 
         
         <form id="uploadForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data" novalidate>
