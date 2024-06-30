@@ -125,7 +125,7 @@
                     <li class="dropdown"><a href="community.php">Community</a></li>
                     <li class="dropdown"><a href="blog.php">News</a></li>
                     <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
-                    <li class="dropdown"><a class="" href="login.php">Staff Login</a></li>
+               
                     </ul>
                 </div>
             </div>

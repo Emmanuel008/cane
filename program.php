@@ -152,11 +152,7 @@ $result = $conn->query("SELECT * FROM blog");
           <a class="nav-link active" href="program.php">Blog</a>
         </li>
       </ul>
-      <ul class="navbar-nav" style="float:right;">
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php" style="float:right;">Logout</a>
-        </li>
-      </ul>
+     
     </div>
   </div>
 </nav> 

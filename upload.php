@@ -154,11 +154,7 @@ $result = $conn->query("SELECT * FROM program");
         </li>
        
       </ul>
-      <ul class="navbar-nav" style="float:right;">
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php" style="float:right;">Logout</a>
-        </li>
-      </ul>
+      
     </div>
   </div>
 </nav> 
