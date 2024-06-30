@@ -5,22 +5,22 @@ $password = "";
 $db = "upload";
 $port = 3306;
 
-// Establish database connection
+
 $conn = new mysqli($host, $username, $password, $db, $port);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle Upload, Update, and Delete actions
+
 if (isset($_POST['upload']) || isset($_POST['update'])) {
-    // File upload path
+   
     $photo = $_FILES["photo"]["name"];
     $tempname = $_FILES["photo"]["tmp_name"];
     $folder = "./images/" . basename($photo);
 
-    // Move uploaded file to folder
+   
     if (move_uploaded_file($tempname, $folder)) {
         echo '<div class="alert alert-success" role="alert">Image uploaded successfully.</div>';
     } else {
@@ -28,7 +28,7 @@ if (isset($_POST['upload']) || isset($_POST['update'])) {
         exit();
     }
 
-    // Sanitize user input
+    
     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
     $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
     $link = isset($_POST['link']) ? htmlspecialchars($_POST['link']) : '';
@@ -36,71 +36,71 @@ if (isset($_POST['upload']) || isset($_POST['update'])) {
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
 
-        // Prepare SQL statement for update
+       
         $stmt = $conn->prepare("UPDATE program SET photo = ?, title = ?, description = ?, link = ? WHERE id = ?");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        // Bind parameters
+        
         $stmt->bind_param("ssssi", $photo, $title, $description, $link, $id);
 
-        // Execute SQL statement
+        
         if ($stmt->execute()) {
             echo '<div class="alert alert-success" role="alert">Record updated successfully.</div>';
         } else {
             echo '<div class="alert alert-danger" role="alert">Error updating record: ' . $stmt->error . '</div>';
         }
 
-        // Close statement
+        
         $stmt->close();
     } else {
-        // Prepare SQL statement for insertion
+       
         $stmt = $conn->prepare("INSERT INTO program (photo, title, description, link) VALUES (?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        // Bind parameters
+       
         $stmt->bind_param("ssss", $photo, $title, $description, $link);
 
-        // Execute SQL statement
+        
         if ($stmt->execute()) {
             echo '<div class="alert alert-success" role="alert">New record created successfully.</div>';
         } else {
             echo '<div class="alert alert-danger" role="alert">Error creating record: ' . $stmt->error . '</div>';
         }
 
-        // Close statement
+       
         $stmt->close();
     }
 }
 
-// Handle Delete
+
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
 
-    // Prepare SQL statement for deletion
+    
     $stmt = $conn->prepare("DELETE FROM program WHERE id = ?");
     if ($stmt === false) {
         die("Prepare failed: " . $conn->error);
     }
 
-    // Bind parameters
+    
     $stmt->bind_param("i", $id);
 
-    // Execute SQL statement
+    
     if ($stmt->execute()) {
         echo '<div class="alert alert-success" role="alert">Record deleted successfully.</div>';
     } else {
         echo '<div class="alert alert-danger" role="alert">Error deleting record: ' . $stmt->error . '</div>';
     }
 
-    // Close statement
+    
     $stmt->close();
 }
 
-// Fetch records from the database
+
 $result = $conn->query("SELECT * FROM program");
 ?>
 
@@ -231,7 +231,7 @@ $result = $conn->query("SELECT * FROM program");
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    // Function to set form fields for editing
+    
     function editRecord(id, title, description, link) {
         $('input[name="id"]').val(id);
         $('input[name="title"]').val(title);
@@ -245,6 +245,6 @@ $result = $conn->query("SELECT * FROM program");
 </html>
 
 <?php
-// Close database connection
+
 $conn->close();
 ?>

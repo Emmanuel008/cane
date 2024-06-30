@@ -5,22 +5,22 @@ $password = "";
 $db = "upload";
 $port = 3306;
 
-// Create database connection
+
 $conn = new mysqli($host, $username, $password, $db, $port);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle Upload or Update
+
 if (isset($_POST['upload']) || isset($_POST['update'])) {
-    // File upload path
+    
     $photo = $_FILES["photo"]["name"];
     $tempname = $_FILES["photo"]["tmp_name"];
     $folder = "./images/" . basename($photo);
 
-    // Move the uploaded file to the folder
+    
     if (move_uploaded_file($tempname, $folder)) {
         echo "<script>alert('Image uploaded successfully.');</script>";
     } else {
@@ -28,7 +28,7 @@ if (isset($_POST['upload']) || isset($_POST['update'])) {
         exit();
     }
 
-    // Sanitize user input
+    
     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
     $content = isset($_POST['content']) ? htmlspecialchars($_POST['content']) : '';
     $readmore = isset($_POST['readmore']) ? htmlspecialchars($_POST['readmore']) : '';
@@ -36,71 +36,70 @@ if (isset($_POST['upload']) || isset($_POST['update'])) {
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
 
-        // Prepare SQL statement for update
+        
         $stmt = $conn->prepare("UPDATE blog SET photo = ?, title = ?, content = ?, readmore = ? WHERE id = ?");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        // Bind parameters
+       
         $stmt->bind_param("ssssi", $photo, $title, $content, $readmore, $id);
 
-        // Execute SQL statement
+      
         if ($stmt->execute()) {
             echo "<script>alert('Record updated successfully.');</script>";
         } else {
             echo "Error: " . $stmt->error . "<br>";
         }
 
-        // Close statement
+       
         $stmt->close();
     } else {
-        // Prepare SQL statement for insertion
+      
         $stmt = $conn->prepare("INSERT INTO blog (photo, title, content, readmore) VALUES (?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        // Bind parameters
         $stmt->bind_param("ssss", $photo, $title, $content, $readmore);
 
-        // Execute SQL statement
+       
         if ($stmt->execute()) {
             echo "<script>alert('New record created successfully.');</script>";
         } else {
             echo "Error: " . $stmt->error . "<br>";
         }
 
-        // Close statement
+       
         $stmt->close();
     }
 }
 
-// Handle Delete
+
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
 
-    // Prepare SQL statement for deletion
+    
     $stmt = $conn->prepare("DELETE FROM blog WHERE id = ?");
     if ($stmt === false) {
         die("Prepare failed: " . $conn->error);
     }
 
-    // Bind parameters
+   
     $stmt->bind_param("i", $id);
 
-    // Execute SQL statement
+   
     if ($stmt->execute()) {
         echo "<script>alert('Record deleted successfully.');</script>";
     } else {
         echo "Error: " . $stmt->error . "<br>";
     }
 
-    // Close statement
+   
     $stmt->close();
 }
 
-// Fetch records from the database
+
 $result = $conn->query("SELECT * FROM blog");
 ?>
 
@@ -126,9 +125,9 @@ $result = $conn->query("SELECT * FROM blog");
         }
         .table-container {
             margin-top: 20px;
-            /* Set max width for the table container */
+            
             max-width: 100%;
-            /* Overflow-x auto to allow horizontal scrolling */
+            
             overflow-x: auto;
         }
     </style>
@@ -231,7 +230,7 @@ $result = $conn->query("SELECT * FROM blog");
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    // Function to set form fields for editing
+    
     function editRecord(id, title, content, readmore) {
         $('input[name="id"]').val(id);
         $('input[name="title"]').val(title);
