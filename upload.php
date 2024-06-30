@@ -5,32 +5,30 @@ $password = "";
 $db = "upload";
 $port = 3306;
 
-
+// Establish database connection
 $conn = new mysqli($host, $username, $password, $db, $port);
 
-
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Handle Upload, Update, and Delete actions
 if (isset($_POST['upload']) || isset($_POST['update'])) {
-   
+    // File upload path
     $photo = $_FILES["photo"]["name"];
-    $tempname = $_FILES["photo"]["tmp_name"]; 
+    $tempname = $_FILES["photo"]["tmp_name"];
     $folder = "./images/" . basename($photo);
 
+    // Move uploaded file to folder
     if (move_uploaded_file($tempname, $folder)) {
-        echo "<div class=\"alert alert-success\">
-  <strong>Success!</strong> image uploaded successfuly.
-</div>";
+        echo '<div class="alert alert-success" role="alert">Image uploaded successfully.</div>';
     } else {
-       echo "<div class=\"alert alert-danger\">
-  <strong>Success!</strong> image upload failed.
-</div>";
+        echo '<div class="alert alert-danger" role="alert">Image upload failed.</div>';
         exit();
     }
 
-   
+    // Sanitize user input
     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
     $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
     $link = isset($_POST['link']) ? htmlspecialchars($_POST['link']) : '';
@@ -38,75 +36,71 @@ if (isset($_POST['upload']) || isset($_POST['update'])) {
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
 
-        
+        // Prepare SQL statement for update
         $stmt = $conn->prepare("UPDATE program SET photo = ?, title = ?, description = ?, link = ? WHERE id = ?");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        
+        // Bind parameters
         $stmt->bind_param("ssssi", $photo, $title, $description, $link, $id);
 
-        
+        // Execute SQL statement
         if ($stmt->execute()) {
-            echo "<div class=\"alert alert-success\">
-  <strong>Success!</strong> Record updated successfully.
-</div>";
+            echo '<div class="alert alert-success" role="alert">Record updated successfully.</div>';
         } else {
-            echo "Error: " . $stmt->error . "<br>";
+            echo '<div class="alert alert-danger" role="alert">Error updating record: ' . $stmt->error . '</div>';
         }
 
-       
+        // Close statement
         $stmt->close();
     } else {
-        
+        // Prepare SQL statement for insertion
         $stmt = $conn->prepare("INSERT INTO program (photo, title, description, link) VALUES (?, ?, ?, ?)");
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
 
-        
+        // Bind parameters
         $stmt->bind_param("ssss", $photo, $title, $description, $link);
 
-        
+        // Execute SQL statement
         if ($stmt->execute()) {
-            echo "<div class=\"alert alert-success\">
-  <strong>Success!</strong> New record created succesfully.
-</div>";
+            echo '<div class="alert alert-success" role="alert">New record created successfully.</div>';
         } else {
-            echo "Error: " . $stmt->error . "<br>";
+            echo '<div class="alert alert-danger" role="alert">Error creating record: ' . $stmt->error . '</div>';
         }
 
-        
+        // Close statement
         $stmt->close();
     }
 }
 
+// Handle Delete
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
 
-   
+    // Prepare SQL statement for deletion
     $stmt = $conn->prepare("DELETE FROM program WHERE id = ?");
     if ($stmt === false) {
         die("Prepare failed: " . $conn->error);
     }
 
-    
+    // Bind parameters
     $stmt->bind_param("i", $id);
 
-   
+    // Execute SQL statement
     if ($stmt->execute()) {
-        echo "<div class=\"alert alert-success\">
-  <strong>Success!</strong> Record deleted successfully.
-</div>";
+        echo '<div class="alert alert-success" role="alert">Record deleted successfully.</div>';
     } else {
-        echo "Error: " . $stmt->error . "<br>";
+        echo '<div class="alert alert-danger" role="alert">Error deleting record: ' . $stmt->error . '</div>';
     }
 
-    
+    // Close statement
     $stmt->close();
 }
 
+// Fetch records from the database
 $result = $conn->query("SELECT * FROM program");
 ?>
 
@@ -114,64 +108,68 @@ $result = $conn->query("SELECT * FROM program");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload Form</title>
+    <title>Program Records Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .form-container {
             border: 1px solid #ccc;
             padding: 20px;
-            max-width: 500px;
             background-color: white;
+            margin-top: 50px;
+        }
+        .form-container img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100px;
         }
         .table-container {
-            margin-top: 50px;
+            margin-top: 20px;
+            max-width: 100%;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
             <div class="form-container">
-                
-                <img alt="Homepage" src="images/buni logo.png" style="max-width: 100%; margin-bottom: 20px;">
-
+                <img alt="Logo" src="images/buni logo.png" style="max-width: 100px; margin-bottom: 20px;">
                 <form id="uploadForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="id" value="">
                     <div class="form-group">
                         <label for="photo">Photo:</label>
-                        <input type="file" name="photo" class="form-control" required>
-                        <div class="valid-feedback">Valid.</div>
+                        <input type="file" name="photo" class="form-control-file" required>
                         <div class="invalid-feedback">Please select a photo.</div>
                     </div>
                     <div class="form-group">
-                        <label for="title">Title:</label></br>
-                        <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" required></br>
-                        <div class="valid-feedback">Valid.</div>
+                        <label for="title">Title:</label>
+                        <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" required>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description:</label></br>
-                        <textarea name="description" rows="5" class="form-control" required></textarea></br>
-                        <div class="valid-feedback">Valid.</div>
+                        <label for="description">Description:</label>
+                        <textarea name="description" rows="5" class="form-control" required></textarea>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="form-group">
-                        <label for="link">Link:</label></br>
-                        <input type="url" class="form-control" id="link" placeholder="Enter Read More" name="link" required></br>
-                        <div class="valid-feedback">Valid.</div>
+                        <label for="link">Link:</label>
+                        <input type="url" class="form-control" id="link" placeholder="Enter Link" name="link" required>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" name="upload" value="Upload">Submit</button>
-                        <button type="submit" class="btn btn-warning" name="update" value="Update">Update</button>
+                        <button type="submit" class="btn btn-primary" name="upload">Submit</button>
+                        <button type="submit" class="btn btn-warning ml-2" name="update" style="display:none;">Update</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <div class="col-md-7">
+            <br>
+            <h2><strong>PROGRAM RECORDS</strong></h2>
             <div class="table-container">
                 <table class="table table-striped">
                     <thead>
@@ -184,23 +182,20 @@ $result = $conn->query("SELECT * FROM program");
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><img src="images/<?php echo $row['photo']; ?>" alt="<?php echo $row['title']; ?>" width="50"></td>
-                            <td><?php echo $row['title']; ?></td>
-                            <td><?php echo $row['description']; ?></td>
-                            <td><a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['link']; ?></a></td>
-                            <td>
-                                <form method="post" style="display:inline-block;">
-                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
-                                <form method="post" enctype="multipart/form-data" style="display:inline-block;">
-                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" name="edit" class="btn btn-warning btn-sm">Edit</button>
-                                </form>
-                            </td>
-                        </tr>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <td><img src="images/<?php echo $row['photo']; ?>" alt="<?php echo $row['title']; ?>" width="50"></td>
+                                <td><?php echo $row['title']; ?></td>
+                                <td><?php echo $row['description']; ?></td>
+                                <td><a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['link']; ?></a></td>
+                                <td>
+                                    <form method="post" style="display: inline-block;">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['description']; ?>', '<?php echo $row['link']; ?>')">Edit</button>
+                                </td>
+                            </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
@@ -212,28 +207,20 @@ $result = $conn->query("SELECT * FROM program");
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-$(document).ready(function() {
-    $('button[name="edit"]').click(function(e) {
-        e.preventDefault();
-        var row = $(this).closest('tr');
-        var id = row.find('input[name="id"]').val();
-        var photo = row.find('img').attr('src').replace('images/', '');
-        var title = row.find('td:eq(1)').text();
-        var description = row.find('td:eq(2)').text();
-        var link = row.find('a').attr('href');
-
+    // Function to set form fields for editing
+    function editRecord(id, title, description, link) {
         $('input[name="id"]').val(id);
         $('input[name="title"]').val(title);
         $('textarea[name="description"]').val(description);
         $('input[name="link"]').val(link);
-        $('input[name="photo"]').val(photo);
-    });
-});
+        $('button[name="upload"]').hide();
+        $('button[name="update"]').show();
+    }
 </script>
 </body>
 </html>
 
 <?php
-// Close connection
+// Close database connection
 $conn->close();
 ?>
