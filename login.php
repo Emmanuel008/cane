@@ -51,7 +51,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body {
             display: flex;
@@ -73,9 +73,43 @@ $conn->close();
             margin: 0 auto 20px; 
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/vendor.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
+<header class="s-header">
+    <div class="nav-menu">
+        <div class="nav-menu-content">
+            <div class="logo">
+                <a class="logo-link" href="/">
+                    <img alt="Homepage" src="images/buni logo.png">
+                </a>
+            </div>
+            <div class="navigation">
+                <ul class="navigation_list">
+                    <li class="dropdown"><a class="" href="index.php" title="about">Home</a>
+                    <li class="dropdown"><a href="do.html">Program</a></li>
+                    <li class="dropdown"><a href="story.html">Success Stories</a></li>
+                    <li class="dropdown"><a href="community.php">Community</a></li>
+                    <li class="dropdown"><a href="blog.php">News</a></li>
+                    <li class="dropdown"><a class="" href="contact.html">Contact</a></li>
+                    <li class="dropdown"><a class="" href="login.php">Staff Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a class="nav-menu-toggle" href="#0" id="nav-menu-toggle">
+        <span class="header-menu-text">Menu</span>
+        <span class="header-menu-icon"></span>
+    </a>
+</header>
 <div class="login-container">
+    
 <img alt="Homepage" src="images/buni logo.png" style="height: 50px;width: 70px;">
 
     <?php if (!empty($login_err)): ?>
@@ -96,8 +130,10 @@ $conn->close();
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script>
     (function() {
         'use strict';
