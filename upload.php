@@ -131,6 +131,30 @@ $result = $conn->query("SELECT * FROM program");
     </style>
 </head>
 <body>
+<header class="s-header">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img alt="Homepage" src="images/buni logo.png" style="height: 50px;width: 70px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="upload.php">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="happening.php">What's Happening</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="program.php">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+    </header>
 
 <div class="container-fluid">
     <div class="row">
