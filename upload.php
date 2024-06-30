@@ -1,3 +1,5 @@
+
+
 <?php
 $host = "localhost";
 $username = "root";
@@ -131,7 +133,7 @@ $result = $conn->query("SELECT * FROM program");
     </style>
 </head>
 <body>
-<header class="s-header">
+
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
@@ -150,11 +152,17 @@ $result = $conn->query("SELECT * FROM program");
         <li class="nav-item">
           <a class="nav-link" href="program.php">Blog</a>
         </li>
+       
+      </ul>
+      <ul class="navbar-nav" style="float:right;">
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php" style="float:right;">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav> 
-    </header>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -217,7 +225,8 @@ $result = $conn->query("SELECT * FROM program");
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                         <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['description']; ?>', '<?php echo $row['link']; ?>')">Edit</button>
+                                    <br>
+                                    <button type="button" class="btn btn-warning btn-sm" style="width:57px;" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['description']; ?>', '<?php echo $row['link']; ?>')">Edit</button>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -240,6 +249,10 @@ $result = $conn->query("SELECT * FROM program");
         $('button[name="upload"]').hide();
         $('button[name="update"]').show();
     }
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
 </script>
 </body>
 </html>

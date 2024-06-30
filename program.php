@@ -1,3 +1,4 @@
+
 <?php
 $host = "localhost";
 $username = "root";
@@ -151,6 +152,11 @@ $result = $conn->query("SELECT * FROM blog");
           <a class="nav-link active" href="program.php">Blog</a>
         </li>
       </ul>
+      <ul class="navbar-nav" style="float:right;">
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php" style="float:right;">Logout</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav> 
@@ -216,7 +222,7 @@ $result = $conn->query("SELECT * FROM blog");
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                         <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['content']; ?>', '<?php echo $row['readmore']; ?>')">Edit</button>
+                                    <button type="button" class="btn btn-warning btn-sm" style="width:57px;" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['content']; ?>', '<?php echo $row['readmore']; ?>')">Edit</button>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -239,6 +245,10 @@ $result = $conn->query("SELECT * FROM blog");
         $('button[name="upload"]').hide();
         $('button[name="update"]').show();
     }
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
 </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <?php
 $host = "localhost";
 $username = "root";
@@ -164,6 +165,11 @@ $result = $conn->query("SELECT * FROM happen");
           <a class="nav-link" href="program.php">Blog</a>
         </li>
       </ul>
+      <ul class="navbar-nav" style="float:right;">
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php" style="float:right;">Logout</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav> 
@@ -210,6 +216,8 @@ $result = $conn->query("SELECT * FROM happen");
         </div>
 
         <div class="col-md-7">
+        <br>
+        <h2><strong>EVENTS RECORDS</strong></h2>
             <div class="table-container">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -234,7 +242,7 @@ $result = $conn->query("SELECT * FROM happen");
                                             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                             <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
                                         </form>
-                                        <button type="button" class="btn btn-warning btn-sm" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['description']; ?>', '<?php echo $row['link']; ?>')">Edit</button>
+                                        <button type="button" class="btn btn-warning btn-sm" style="width:57px;" onclick="editRecord(<?php echo $row['id']; ?>, '<?php echo $row['title']; ?>', '<?php echo $row['description']; ?>', '<?php echo $row['link']; ?>')">Edit</button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -273,6 +281,10 @@ $result = $conn->query("SELECT * FROM happen");
             }, false);
         }, false);
     })();
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
 </script>
 </body>
 </html>
