@@ -152,7 +152,9 @@ $result = $conn->query("SELECT * FROM program");
         <li class="nav-item">
           <a class="nav-link" href="program.php">Blog</a>
         </li>
-       
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
       </ul>
       
     </div>
