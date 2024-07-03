@@ -159,7 +159,9 @@ $result = $conn->query("SELECT * FROM blog");
     </div>
   </div>
 </nav> 
-    </header>
+
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
